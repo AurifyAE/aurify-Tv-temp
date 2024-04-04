@@ -13,13 +13,13 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!--     Fonts and icons     -->
   <script src="https://kit.fontawesome.com/0e1fa7c1a3.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
     body {
       margin: 0;
-      padding: 40px;
+      padding: 0;
       font-family: "arial", heletica, sans-serif;
       font-size: 24px;
       background: white url('./miop4.jpg');
@@ -30,45 +30,7 @@
       -ms-animation: 20s linear 0s normal none infinite animate;
       -o-animation: 20s linear 0s normal none infinite animate;
       animation: 20s linear 0s normal none infinite animate;
-      color: #005043;
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .row {
-      padding: 25px;
-    }
-
-    .card-logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-      opacity: 90%;
-    }
-
-    .card-logo img {
-      margin-right: 40px;
-    }
-
-    i {
-      font-size: 1.5rem;
-    }
-
-    h4 {
-      color: black;
-      font-weight: bold;
-    }
-
-    .card {
-      border-radius: 20px;
-      margin-left: 10px;
-    }
-
-    .tradingview-widget-container {
-      width: 100%;
     }
 
     .rate-card {
@@ -82,11 +44,10 @@
     }
 
     table {
-      display: none;
+      display: block;
       justify-content: center;
       align-items: center;
       width: 100%;
-      margin-left: 0px;
       font-size: 1.8vw;
       color: #d40055;
     }
@@ -132,7 +93,7 @@
     /* Hover effect for better user experience */
     .card-table tbody tr:hover {
       background-color: #d40055
-      /* Lighter gray on hover */
+        /* Lighter gray on hover */
     }
 
     .date-time {
@@ -150,11 +111,11 @@
     }
 
 
-    .row2 {
+    /* .row2 {
       display: flex;
       flex-direction: row;
       margin-top: 50px;
-    }
+    } */
 
     .row {
       display: flex;
@@ -171,7 +132,7 @@
       flex-direction: row;
       justify-content: space-between;
       padding: 20px;
-      margin-right: 500px;
+      margin: -20px 200px 0 0;
     }
 
     .gold {
@@ -230,7 +191,7 @@
 
 
     .news-card {
-      display: none;
+      display: flex;
       flex-direction: row;
       background-color: #fff;
       opacity: 80%;
@@ -251,12 +212,7 @@
     .news-card .news-label h3 {
       font-size: 1.4vw;
       font-weight: 600;
-    }
-
-    .news-card .news-label p {
-      margin-top: -15px;
-      font-size: 1.1vw;
-      font-weight: 600;
+      margin-top: 10PX;
     }
 
     .news-card .news {
@@ -265,65 +221,6 @@
       font-size: 1.8vw;
       color: black;
       font-weight: 400;
-    }
-
-    .calendar {
-      position: relative;
-      width: 100%;
-
-    }
-
-    .calendar:before {
-      content: '';
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      box-shadow: 206px 208px #d40055, -35px 70px #d40055;
-      border-radius: 50%;
-    }
-
-    .calendar .calendar-body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      border-bottom: 6px solid #d40055;
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      box-shadow: 0 5px 25px rgb(1 1 1 / 15%);
-    }
-
-    .calendar .calendar-body .month-name {
-      color: black;
-      background: #d40055;
-      width: 100%;
-      font-size: 1.6em;
-      text-align: center;
-      font-weight: 800;
-      padding: 5px 0;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-    }
-
-    .calendar .calendar-body .day-name {
-      color: #fff;
-      font-size: 2em;
-      font-weight: 400;
-    }
-
-    .calendar .calendar-body .date-number {
-      color: #fff;
-      font-size: 6em;
-      font-weight: 600;
-      line-height: 1.2em;
-    }
-
-    .calendar .calendar-body .year {
-      color: #fff;
-      font-size: 3em;
-      font-weight: 600;
     }
 
     @font-face {
@@ -373,45 +270,24 @@
 </head>
 
 <body>
-  <div class="row">
-    <div class="col-lg-12 d-flex">
-      <div class="col-lg-4">
-        <img class="logo" src="./AURIFY-NEW-1-png.png" alt="" style="width: 350px;margin-top:20px;margin-left: 5%;">
-      </div>
-      <div class="col-lg-4 date-time">
-        <div id="clockdate">
-          <div class="clockdate-wrapper">
-            <div id="clock"></div>
-            <div id="date"></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-      </div>
+  <div class="col-lg-12" style="display: flex; flex-direction: row;  padding: 0; height: max-content;">
+    <div class="col-lg-4">
+      <img class="logo" src="./AURIFY-NEW-1-png.png" alt="" style="width: 350px;">
     </div>
 
-    <div class="col-lg-7  mr-5">
-      <div class="card-table">
-        <table>
-          <thead style="margin-bottom: 0px;">
-            <tr>
-              <th colspan="2">COMMODITY</th>
-              <th>UNIT</th>
-              <th>BID (<span id="currencySymbol">AED</span>)</th>
-              <th>ASK (<span id="currencySymbol">AED</span>)</th>
-            </tr>
-            <tr style="height: 10px;background-color: transparent;"></tr>
-          </thead>
-
-          <tbody id="tableBodyTV">
-           
-          </tbody>
-          
-        </table>
-      </div>
+    <div class="clockdate-wrapper col-lg-6"
+      style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div id="clock"></div>
+      <div id="date"></div>
     </div>
 
-    <div class=" col-lg-4 gold-silver gold d-block ml-5" style="margin-top:-20px ;">
+    <div class="col-lg-2">
+    </div>
+  </div>
+
+
+  <div class="col-lg-12" style="display: flex; flex-direction: row;">
+    <div class="col-lg-4 gold-silver gold d-block ml-5">
       <!-- GOLD -->
       <div class="label"
         style="display: flex;justify-content: center;align-items: center;background-color: #d40055;color: white;">
@@ -449,7 +325,7 @@
       </div>
 
       <!-- silver -->
-      <div class=" label mt-4"
+      <div class="label mt-4"
         style="display: flex;justify-content: center;align-items: center;background-color: #d40055;color: white;">
         <p>Silver</p>
         <h5>oz</h5>
@@ -485,24 +361,35 @@
     </div>
 
 
-    
+    <div class="col-lg-6">
+      <div class="card-table">
+        <table>
+          <thead style="margin-bottom: 0px;">
+            <tr>
+              <th colspan="2">COMMODITY</th>
+              <th>UNIT</th>
+              <th>BID (<span id="currencySymbol">AED</span>)</th>
+              <th>ASK (<span id="currencySymbol">AED</span>)</th>
+            </tr>
+            <tr style="height: 10px;background-color: transparent;"></tr>
+          </thead>
 
+          <tbody id="tableBodyTV">
 
-
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
 
-
-  <div class="row " style="margin-top: -50px;">
-    <div class="col-lg-12 news-card" style="margin-left: 64px; max-width: 92.5%;">
-      <div class="news-label">
-        <h3>PULPARAMBIL</h3>
-        <p>Latest News</p>
-      </div>
-      <div class="news">
-        <!-- Display News Here -->
-        <marquee behavior="scrolling" direction="left" id="displayNews">-</marquee>
-      </div>
+  <div class="col-lg-12 news-card" style="margin-left: 80px; max-width: 92.5%;">
+    <div class="news-label">
+      <h3>AURIFY NEWS</h3>
+    </div>
+    <div class="news">
+      <!-- Display News Here -->
+      <marquee behavior="scrolling" direction="left" id="displayNews">-</marquee>
     </div>
   </div>
 
@@ -546,7 +433,7 @@
 
   <script>
     function startTime() {
-      function updateTime() { 
+      function updateTime() {
         var today = new Date();
         var hr = today.getHours();
         var min = today.getMinutes();
@@ -559,7 +446,7 @@
         min = checkTime(min);
         // sec = checkTime(sec);
         // + ":" + sec
-        document.getElementById("clock").innerHTML = hr + ":" + min  + " " + ap;
+        document.getElementById("clock").innerHTML = hr + ":" + min + " " + ap;
 
         var months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
         var days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
