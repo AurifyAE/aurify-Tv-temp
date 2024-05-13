@@ -1,1 +1,1 @@
-https://aurifyae.github.io/Misnagold/
+https://view1.aurify.ae/
